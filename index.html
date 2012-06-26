@@ -29,17 +29,25 @@
        Modernizr enables HTML5 elements & feature detects for optimal performance.
        Create your own custom Modernizr build: www.modernizr.com/download/ -->
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
+      <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map_canvas { height: 100% }
+    </style>
+    <script type="text/javascript"
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBwP_mo9blwR7fEMs0C4z7TQgay4tcWDx4&sensor=true">
+    </script>
+    <script type="text/javascript" src="Initialize.js">
+    </script>
 </head>
-<body>
+<body onload="initialize()">
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
   <header>
 
   </header>
-  <div role="main">
-a
-  </div>
+  <div id="map_canvas" style="width:100%; height:100%"></div>
   <footer>
 
   </footer>
