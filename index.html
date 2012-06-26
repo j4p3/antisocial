@@ -42,14 +42,16 @@
   var lat = 0
   var lon = 0
   var klscore = 0
+  var kl_coo_array = []
   $(function() {
     $.getJSON('http://search.twitter.com/search.json?geocode=42.3583,-71.0603,10mi&callback=?', function(data) {
         $.each(data.results, function(i, item){
-        console.log(item.from_user);
+        console.log(item);
         $.getJSON('http://api.klout.com/v2/identity.json/twitter?screenName=' + item.from_user + '&key=yeg92656eda2vmvhz29wgy64&callback=?', function(data) {
           console.log(data);
           $.getJSON('http://api.klout.com/v2/user.json/' + data.id + '/score?key=yeg92656eda2vmvhz29wgy64&callback=?', function(score){
             console.log(score);
+            klscore = score;
 
 
 
